@@ -8,19 +8,29 @@
 import { expect } from 'chai'
 
 // モックによってモジュールを作成する
-/*
 const actionsInjector = require('inject!src/vuex/actions')
 const actions = actionsInjector({
+/*
+  // REFERENCE
   '../api/shop': {
     getProducts (cb) {
       setTimeout(() => {
         cb([ ])
       }, 100)
     }
+  },
+
+  // TODO
+  '../api': {
+    zip2address (cb, data) {
+      require('fs').readFile('../sample_data/search.json', 'utf8', function (err, text) {
+        msg = err ? err : text
+        cb([ msg ])
+      })
+    }
   }
-})
 */
-const actions = require('src/vuex/actions')
+})
 
 // アクションが期待されるミューテーションを呼び出すかをテストするためのヘルパー
 const testAction = (action, args, state, expectedMutations, done) => {
@@ -72,4 +82,12 @@ describe('actions', () => {
       { name: 'DECREMENT', payload: [ 2 ] }
     ], done)
   })
+/*
+// TODO
+  it('searchAddress', done => {
+    testAction(actions.searchAddress, [ {zipcode: '160-0022'} ], {}, [
+      { name: 'DECREMENT', payload: [ '160-0022,新宿,新宿区,東京都,日本' ] }
+    ], done)
+  })
+*/
 })

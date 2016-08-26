@@ -8,7 +8,8 @@ Vue.use(Vuex)
 // 保持するためのオブジェクトを作ります。
 const state = {
   // アプリケーションがスタートする時、カウントが 0 にセットされます。
-  count: 0
+  count: 0,
+  message: ''
 }
 
 // exportは本来不要だが、unitテストを行うため設定
@@ -22,6 +23,9 @@ export const mutations = {
   DECREMENT (state, amount) {
     amount = parseInt(amount) || 0
     state.count -= parseInt(amount)
+  },
+  SEARCH (state, message) {
+    state.message = message
   }
 }
 

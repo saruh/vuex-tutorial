@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import { mutations } from 'src/vuex/store'
 
 // ミューテーションの分割束縛
-const { INCREMENT, DECREMENT } = mutations
+const { INCREMENT, DECREMENT, SEARCH } = mutations
 
 describe('mutations', () => {
   it('INCREMENT', () => {
@@ -28,5 +28,11 @@ describe('mutations', () => {
 
     DECREMENT(state, '')
     expect(state.count).to.equal(-3)
+  })
+
+  it('SEARCH', () => {
+    const state = { message: '' }
+    SEARCH(state, 'テスト')
+    expect(state.message).to.equal('テスト')
   })
 })

@@ -1,0 +1,64 @@
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "160-0022",
+               "short_name" : "160-0022",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "新宿",
+               "short_name" : "新宿",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "新宿区",
+               "short_name" : "新宿区",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "東京都",
+               "short_name" : "東京都",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "日本",
+               "short_name" : "JP",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "〒160-0022, 日本",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 35.7013634,
+                  "lng" : 139.7148441
+               },
+               "southwest" : {
+                  "lat" : 35.6873836,
+                  "lng" : 139.6996581
+               }
+            },
+            "location" : {
+               "lat" : 35.69291279999999,
+               "lng" : 139.709008
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 35.7013634,
+                  "lng" : 139.7148441
+               },
+               "southwest" : {
+                  "lat" : 35.6873836,
+                  "lng" : 139.6996581
+               }
+            }
+         },
+         "place_id" : "ChIJ0fbIntyMGGARHXV0GOsd8t0",
+         "types" : [ "postal_code" ]
+      }
+   ],
+   "status" : "OK"
+}
