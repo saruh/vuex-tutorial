@@ -1,10 +1,12 @@
 <template>
-  <form action='#' @submit='search()'>
-    <input v-model='zipcode'>
-    <button type='submit'>Search</button>
-  </form>
   <div>
-    {{ message }}
+    <form method='post' action='#' @submit.stop.prevent='search()'>
+      <input v-model='zipcode'>
+      <button type='submit'>Search</button>
+    </form>
+    <div>
+      {{ message }}
+    </div>
   </div>
 </template>
 

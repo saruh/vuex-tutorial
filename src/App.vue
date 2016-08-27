@@ -1,41 +1,34 @@
 <style>
-.counter {
-	background-color: #a2ec9c;
-}
-.search {
-	background-color: #909090;
+.router-view {
+  padding: 10px;
+  background-color: #a2ec9c;
 }
 </style>
 
 <template>
-  <div class='counter'>
-    <Display></Display>
-    <Increment></Increment>
-    <Decrement></Decrement>
-    <Fluctuation></Fluctuation>
-  </div>
-  <div class='search'>
-    <Search></Search>
+  <ul>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
+        <a v-link="{ path: '/count' }">Go to Count</a>
+      </span>
+    </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
+        <a v-link="{ path: '/search' }">Go to Search</a>
+      </span>
+    </li>
+  </ul>
+  <div class='router-view'>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Display from './components/Display.vue'
-import Increment from './components/Increment.vue'
-import Decrement from './components/Decrement.vue'
-import Fluctuation from './components/Fluctuation.vue'
-import Search from './components/Search.vue'
-
 import store from './vuex/store'
 
 export default {
-  components: {
-    Display,
-    Increment,
-    Decrement,
-    Fluctuation,
-    Search
-  },
-  store // このコンポーネントとすべての子孫コンポーネントからストアを使用できるようにします。
+  store
 }
 </script>
