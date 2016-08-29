@@ -1,5 +1,6 @@
 import Count from './components/Count'
 import Search from './components/Search'
+import Dialog from './components/Dialog'
 
 export function configRouter (router) {
   router.map({
@@ -8,6 +9,9 @@ export function configRouter (router) {
     },
     '/search': {
       component: Search
+    },
+    '/dialog': {
+      component: Dialog
     }
   })
 }

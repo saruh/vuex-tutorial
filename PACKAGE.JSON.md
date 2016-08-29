@@ -1,7 +1,16 @@
 - dependencies
   - babel-runtime
+  - dialog-polyfill
+    - Polyfill for the dialog element
+    - dialogはchromeはデフォルトで利用可能、safariなどは対応していないためその差分を吸収する
+    - [github](https://github.com/GoogleChrome/dialog-polyfill)
+    - [demo](http://demo.agektmr.com/dialog/)
   - vue
-    - vue.js本体
+    - Vue.js本体
+  - vue-resource
+    - HTTP client for Vue.js
+  - vue-router
+    - router for Vue.js
   - vuex
     - vuex本体
 - devDependencies
