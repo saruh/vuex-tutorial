@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { incrementCounter } from '../vuex/actions'
+import { incrementCounter } from '../../vuex/actions'
 export default {
   vuex: {
     actions: {

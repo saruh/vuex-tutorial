@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { getCount } from '../vuex/getters'
+import { getCount } from '../../vuex/getters'
 export default {
   // storeから状態を取り出す
   vuex: {

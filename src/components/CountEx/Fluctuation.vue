@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { incrementCounterAmount, decrementCounterAmount } from '../vuex/actions'
+import { incrementCounterAmount, decrementCounterAmount } from '../../vuex/actions'
 export default {
   data: function () {
     return {
