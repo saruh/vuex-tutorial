@@ -39,13 +39,15 @@ dialog + .backdrop {
 </style>
 
 <template>
-  <dialog class="mdl-dialog">
-    <p>This is da dialog!</p>
-    <div class="mdl-dialog__actions">
-      <button type="button" class="mdl-button" @click="close">閉じる</button>
-    </div>
-  </dialog>
-  <button type="button" class="mdl-button" @click="show">開く</button>
+  <div>
+    <dialog class="mdl-dialog">
+      <p>This is da dialog!</p>
+      <div class="mdl-dialog__actions">
+        <button type="button" class="mdl-button" @click="close">閉じる</button>
+      </div>
+    </dialog>
+    <button type="button" class="mdl-button" @click="show">開く</button>
+  </div>
 </template>
 
 <script>
