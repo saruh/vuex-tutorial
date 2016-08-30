@@ -10,25 +10,25 @@
     <li class="mdl-list__item">
       <span class="mdl-list__item-primary-content">
         <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a v-link="{ path: '/count' }">Go to Count</a>
+        <a id="menu-count" v-link="{ path: '/count' }">Go to Count</a>
       </span>
     </li>
     <li class="mdl-list__item">
       <span class="mdl-list__item-primary-content">
         <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a v-link="{ path: '/count-ex' }">Go to CountEx</a>
+        <a id="menu-count-ex" v-link="{ path: '/count-ex' }">Go to CountEx</a>
       </span>
     </li>
     <li class="mdl-list__item">
       <span class="mdl-list__item-primary-content">
         <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a v-link="{ path: '/search' }">Go to Search</a>
+        <a id="menu-search" v-link="{ path: '/search' }">Go to Search</a>
       </span>
     </li>
     <li class="mdl-list__item">
       <span class="mdl-list__item-primary-content">
         <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a v-link="{ path: '/dialog' }">Go to Dialog</a>
+        <a id="menu-dialog" v-link="{ path: '/dialog' }">Go to Dialog</a>
       </span>
     </li>
   </ul>

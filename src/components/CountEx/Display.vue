@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Count is {{ counterValue }}</h3>
+    <h3>Count is </span><span id="count-ex-value">{{ counterValue }}</h3>
   </div>
 </template>
 

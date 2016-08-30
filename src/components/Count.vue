@@ -7,16 +7,16 @@
 <template>
   <div>
     <div class='row'>
-        <span>Count is {{ counterValue }}</span>
+        <span>Count is </span><span id="count-value">{{ counterValue }}</span>
     </div>
     <div class='row'>
-        <button @click='incrementCounter' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Increment +1</button>
-        <button @click='decrementCounter' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Decrement -1</button>
+        <button id="count-increment" @click='incrementCounter' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Increment +1</button>
+        <button id="count-decrement" @click='decrementCounter' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Decrement -1</button>
     </div>
     <div class='row'>
-        <input v-model='num' type="text">
-        <button @click='increment' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Increment +?</button>
-        <button @click='decrement' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Decrement -?</button>
+        <input id='count-amount' v-model='num' type="text">
+        <button id="count-increment-amount" @click='increment' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Increment +?</button>
+        <button id="count-decrement-amount" @click='decrement' class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Decrement -?</button>
     </div>
   </div>
 </template>

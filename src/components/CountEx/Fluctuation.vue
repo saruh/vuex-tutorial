@@ -1,8 +1,8 @@
 <template>
   <div>
-    <input v-model='num'>
-    <button @click='increment'>Increment +?</button>
-    <button @click='decrement'>Decrement -?</button>
+    <input id="count-ex-amount" v-model='num'>
+    <button id="count-ex-increment-amount" @click='increment'>Increment +?</button>
+    <button id="count-ex-decrement-amount" @click='decrement'>Decrement -?</button>
   </div>
 </template>
 

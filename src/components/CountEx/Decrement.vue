@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click='decrementCounter'>Decrement -1</button>
+    <button id="count-ex-decrement" @click='decrementCounter'>Decrement -1</button>
   </div>
 </template>
 

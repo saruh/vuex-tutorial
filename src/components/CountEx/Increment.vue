@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click='incrementCounter'>Increment +1</button>
+    <button id="count-ex-increment" @click='incrementCounter'>Increment +1</button>
   </div>
 </template>
 
