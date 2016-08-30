@@ -6,16 +6,20 @@ import Dialog from './components/Dialog'
 export function configRouter (router) {
   router.map({
     '/count': {
-      component: Count
+      component: Count,
+      title: 'Count'
     },
     '/count-ex': {
-      component: CountEx
+      component: CountEx,
+      title: 'CountEx'
     },
     '/search': {
-      component: Search
+      component: Search,
+      title: 'Search'
     },
     '/dialog': {
-      component: Dialog
+      component: Dialog,
+      title: 'Dialog'
     }
   })
 }

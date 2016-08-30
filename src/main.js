@@ -24,3 +24,9 @@ const App = Vue.extend(Object.assign(require('./App.vue'), {
 }))
 */
 router.start(App, 'app')
+
+// TODO: 本当はコンポーネントに直接アクセスしてきた場合でもtitleを変更したいのだが、
+// うまくいく方法が見つからないので、一旦切り替え時のみ対応
+router.afterEach(function (transition) {
+  document.title = transition.to.title
+})
