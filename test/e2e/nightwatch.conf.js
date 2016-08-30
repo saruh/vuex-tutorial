@@ -20,7 +20,24 @@ module.exports = {
     "default": {
       "selenium_port": 4444,
       "selenium_host": "localhost",
-      "silent": true
+      "silent": true,
+      // テスト失敗時にスクリーンショットを撮る
+      "screenshots" : {
+        "enabled" : true,
+        "path" : "screenshots",
+        "on_failure" : true,
+        "on_error" : false
+      }
+    },
+
+    "phantomjs": {
+      "desiredCapabilities": {
+        "browserName": "phantomjs",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "phantomjs.page.settings.userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4",
+        "phantomjs.binary.path": "node_modules/phantomjs-prebuilt/bin/phantomjs"
+      }
     },
 
     "chrome": {

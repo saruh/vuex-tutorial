@@ -14,7 +14,8 @@ if (opts.indexOf('--config') === -1) {
   opts = opts.concat(['--config', 'test/e2e/nightwatch.conf.js'])
 }
 if (opts.indexOf('--env') === -1) {
-  opts = opts.concat(['--env', 'chrome'])
+  // 規定のブラウザをヘッドレスブラウザにしてローカルでのテストを効率化
+  opts = opts.concat(['--env', 'phantomjs'])
 }
 
 var spawn = require('cross-spawn')
