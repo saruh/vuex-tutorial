@@ -6,7 +6,7 @@ export const incrementCounterAmount = ({ dispatch, state }, amount = 1) => dispa
 export const decrementCounterAmount = ({ dispatch, state }, amount = 1) => dispatch('DECREMENT', amount)
 
 export const searchAddress = ({dispatch}, el) => {
-  api.zip2address({address: el.zipcode})
+  api.zip2address({address: el.zipcode, language: 'ja', sensor: 'false'})
   .then((response) => {
     var data = response.json()
     console.log('res', response.data)
