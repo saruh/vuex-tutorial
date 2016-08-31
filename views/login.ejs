@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>my-project</title>
+  </head>
+  <body style='width: 80%; margin: 0 auto;'>
+<% if (authorized) { %>
+   <form action="logout" method="post">
+     ログイン中です。
+     <input type="submit" value="ログアウト">
+   </form>
+<% } else { %>
+   <form action="login" method="post">
+     ID:
+     <input type="text" name="email" value="">
+     Password:
+     <input type="password" name="password" value="">
+     <input type="submit" value="ログイン">
+   </form>
+<% } %>
+  </body>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+</html>
