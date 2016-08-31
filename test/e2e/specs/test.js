@@ -12,7 +12,7 @@ var commonCount = function (browser, name) {
     .assert.elementCount('input', 1)
     .assert.value('#' + name + '-amount', '2')
     .expect.element('#' + name + '-value').text.to.equal('0')
-  
+
   browser
     .click('#' + name + '-increment')
     .expect.element('#' + name + '-value').text.to.equal('1')
