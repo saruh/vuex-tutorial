@@ -25,3 +25,9 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## For CI
+```
+# db dump (schemaだけでいいなら-dを付与する)
+mysqldump -u root -B --events --routines --triggers sample > test/e2e/data/db.sql
+```

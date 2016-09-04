@@ -45,7 +45,6 @@ module.exports = {
     .url('http://localhost:8080')
       .waitForElementVisible('body', 1000)
       .assert.containsText('a', 'Go to Count')
-      .assert.elementCount('a', 4)
       .click('#menu-count')
       .assert.urlContains('/count')
       .assert.title('Count')

@@ -2,3 +2,6 @@ machine:
   node:
     version: 6.3.1
   timezone: Asia/Tokyo
+database:
+  override:
+    - mysql -u root < test/e2e/data/db.sql

@@ -21,6 +21,8 @@ app.set('view engine', 'ejs')  // templateエンジン
 app.use(flash())  // passportの失敗時の原因を取得するのに利用
 app.use(require('body-parser').urlencoded({ extended: true }))  // postパラメータの受付
 app.use(session({ secret: 'hoge', resave: false, saveUninitialized: false }))
+
+require('./database').connect()
 require('../src/server-config/passport')
 
 var compiler = webpack(webpackConfig)
