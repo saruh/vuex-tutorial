@@ -37,6 +37,12 @@
         <a id="menu-dialog" href="/server-program/login">Go to Login</a>
       </span>
     </li>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
+        <a id="menu-chat" v-link="{ path: '/chat' }">Go to Chat</a>
+      </span>
+    </li>
   </ul>
   <div class='router-view'>
     <router-view></router-view>

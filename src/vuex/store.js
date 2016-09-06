@@ -9,7 +9,8 @@ Vue.use(Vuex)
 const state = {
   // アプリケーションがスタートする時、カウントが 0 にセットされます。
   count: 0,
-  message: ''
+  message: '',
+  chat_msgs: []
 }
 
 // exportは本来不要だが、unitテストを行うため設定
@@ -26,6 +27,9 @@ export const mutations = {
   },
   SEARCH (state, message) {
     state.message = message
+  },
+  CHAT_POST (state, msg) {
+    state.chat_msgs.push(msg)
   }
 }
 

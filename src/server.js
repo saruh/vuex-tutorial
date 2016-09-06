@@ -67,11 +67,11 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-module.exports = app.listen(port, function (err) {
+var server = require('./socketio')
+module.exports = server.listen(port, function (err) {
   if (err) {
     console.log(err)
     return
   }
   console.log('Listening at http://localhost:' + port + '\n')
 })
-
