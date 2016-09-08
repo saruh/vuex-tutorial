@@ -41,22 +41,51 @@ var commonCount = function (browser, name) {
 
 module.exports = {
   '/': function (browser) {
+    // console.log('browser', browser.options.desiredCapabilities.browserName)
+
+    // chromeだと問題ないが、phantomjsだとwindowが小さすぎて
+    // 大きい時にしか表示されないメニューのテストができないため
+    // ウィンドウを最大化してから始める
+    // 途中でリサイズしても、イベントが上がらないのか、メニューは表示されなかった
+    browser
+    .maximizeWindow()
+
     browser
     .url('http://localhost:8080')
       .waitForElementVisible('body', 1000)
-      .assert.containsText('a', 'Go to Count')
       .click('#menu-count')
-      .assert.urlContains('/count')
-      .assert.title('Count')
+        .assert.urlContains('/count')
+        .assert.title('Count')
       .click('#menu-count-ex')
-      .assert.urlContains('/count-ex')
-      .assert.title('CountEx')
+        .assert.urlContains('/count-ex')
+        .assert.title('CountEx')
       .click('#menu-search')
-      .assert.urlContains('/search')
-      .assert.title('Search')
+        .assert.urlContains('/search')
+        .assert.title('Search')
       .click('#menu-dialog')
-      .assert.urlContains('/dialog')
-      .assert.title('Dialog')
+        .assert.urlContains('/dialog')
+        .assert.title('Dialog')
+      .click('#menu-chat')
+        .assert.urlContains('/chat')
+        .assert.title('Chat')
+
+    browser
+      .click('body > div.mdl-layout__container > div > header > div.mdl-layout__drawer-button')
+      .click('#s-menu-count')
+        .assert.urlContains('/count')
+        .assert.title('Count')
+      .click('#s-menu-count-ex')
+        .assert.urlContains('/count-ex')
+        .assert.title('CountEx')
+      .click('#s-menu-search')
+        .assert.urlContains('/search')
+        .assert.title('Search')
+      .click('#s-menu-dialog')
+        .assert.urlContains('/dialog')
+        .assert.title('Dialog')
+      .click('#s-menu-chat')
+        .assert.urlContains('/chat')
+        .assert.title('Chat')
       .end()
   },
 
@@ -76,14 +105,14 @@ module.exports = {
 
     browser
       .click('button[type=submit]')
-      .pause(1000)
+      .pause(3000)
       .expect.element('#search-result').text.to.equal('160-0022,新宿,新宿区,東京都,日本')
 
     browser
       .clearValue('#zipcode')
       .setValue('#zipcode', '160-0021')
       .click('button[type=submit]')
-      .pause(1000)
+      .pause(3000)
       .expect.element('#search-result').text.to.equal('160-0021,歌舞伎町,新宿区,東京都,日本')
 
     browser

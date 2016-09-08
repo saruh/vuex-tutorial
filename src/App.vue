@@ -1,58 +1,29 @@
 <style>
-.router-view {
+main {
   padding: 10px;
-  background-color: #a2ec9c;
+  background-color: #ebf5e9;
 }
 </style>
 
 <template>
-  <ul>
-    <li class="mdl-list__item">
-      <span class="mdl-list__item-primary-content">
-        <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a id="menu-count" v-link="{ path: '/count' }">Go to Count</a>
-      </span>
-    </li>
-    <li class="mdl-list__item">
-      <span class="mdl-list__item-primary-content">
-        <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a id="menu-count-ex" v-link="{ path: '/count-ex' }">Go to CountEx</a>
-      </span>
-    </li>
-    <li class="mdl-list__item">
-      <span class="mdl-list__item-primary-content">
-        <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a id="menu-search" v-link="{ path: '/search' }">Go to Search</a>
-      </span>
-    </li>
-    <li class="mdl-list__item">
-      <span class="mdl-list__item-primary-content">
-        <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a id="menu-dialog" v-link="{ path: '/dialog' }">Go to Dialog</a>
-      </span>
-    </li>
-    <li class="mdl-list__item">
-      <span class="mdl-list__item-primary-content">
-        <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a id="menu-dialog" href="/server-program/login">Go to Login</a>
-      </span>
-    </li>
-    <li class="mdl-list__item">
-      <span class="mdl-list__item-primary-content">
-        <i class="material-icons mdl-list__item-icon">play_circle_outline</i>
-        <a id="menu-chat" v-link="{ path: '/chat' }">Go to Chat</a>
-      </span>
-    </li>
-  </ul>
-  <div class='router-view'>
-    <router-view></router-view>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <Menu></Menu>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <router-view></router-view>
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
+import Menu from './components/Menu'
 import store from './vuex/store'
 
 export default {
-  store
+  store,
+  components: {
+    Menu
+  }
 }
 </script>
