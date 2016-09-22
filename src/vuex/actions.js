@@ -9,7 +9,6 @@ export const searchAddress = ({dispatch}, el) => {
   api.zip2address({address: el.zipcode, language: 'ja', sensor: 'false'})
   .then((response) => {
     var data = response.json()
-    console.log('res', response.data)
     dispatch('SEARCH', data.results[0].address_components.map(a => a.long_name).join(','))
   }, (err) => {
     console.log('err', err)
@@ -18,5 +17,29 @@ export const searchAddress = ({dispatch}, el) => {
   .catch((e) => {
     console.log('catch', e)
     dispatch('SEARCH', e)
+  })
+}
+
+export const login = ({dispatch}, el) => {
+  api.login({email: el.email, password: el.password})
+  .then((response) => {
+    dispatch('LOGIN', response.data.authorized)
+  }, (err) => {
+    console.log('err', err)
+  })
+  .catch((e) => {
+    console.log('catch', e)
+  })
+}
+
+export const logout = ({dispatch}, el) => {
+  api.logout()
+  .then((response) => {
+    dispatch('LOGIN', response.data.authorized)
+  }, (err) => {
+    console.log('err', err)
+  })
+  .catch((e) => {
+    console.log('catch', e)
   })
 }

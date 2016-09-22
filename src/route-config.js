@@ -2,6 +2,7 @@ import Count from './components/Count'
 import CountEx from './components/CountEx'
 import Search from './components/Search'
 import Dialog from './components/Dialog'
+import Login from './components/Login'
 import Chat from './components/Chat'
 
 export function configRouter (router) {
@@ -21,6 +22,10 @@ export function configRouter (router) {
     '/dialog': {
       component: Dialog,
       title: 'Dialog'
+    },
+    '/login': {
+      component: Login,
+      title: 'Login'
     },
     '/chat': {
       component: Chat,

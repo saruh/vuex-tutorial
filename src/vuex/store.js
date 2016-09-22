@@ -10,6 +10,7 @@ const state = {
   // アプリケーションがスタートする時、カウントが 0 にセットされます。
   count: 0,
   message: '',
+  login_status: false,
   chat_msgs: []
 }
 
@@ -27,6 +28,9 @@ export const mutations = {
   },
   SEARCH (state, message) {
     state.message = message
+  },
+  LOGIN (state, status) {
+    state.login_status = status
   },
   CHAT_POST (state, msg) {
     state.chat_msgs.push(msg)

@@ -65,6 +65,9 @@ module.exports = {
       .click('#menu-dialog')
         .assert.urlContains('/dialog')
         .assert.title('Dialog')
+      .click('#menu-login')
+        .assert.urlContains('/login')
+        .assert.title('Login')
       .click('#menu-chat')
         .assert.urlContains('/chat')
         .assert.title('Chat')
@@ -83,6 +86,9 @@ module.exports = {
       .click('#s-menu-dialog')
         .assert.urlContains('/dialog')
         .assert.title('Dialog')
+      .click('#s-menu-login')
+        .assert.urlContains('/login')
+        .assert.title('Login')
       .click('#s-menu-chat')
         .assert.urlContains('/chat')
         .assert.title('Chat')
@@ -133,6 +139,31 @@ module.exports = {
     browser
       .click('#dialog-close')
       .expect.element('dialog').to.not.have.attribute('open')
+
+    browser
+      .end()
+  },
+
+  '/login': function (browser) {
+    browser
+    .url('http://localhost:8080/login')
+      .assert.elementCount('input', 3)
+      .assert.elementPresent('#email')
+      .assert.elementPresent('#password')
+      .assert.elementPresent('input[type=submit]')
+      .expect.element('input[type="submit"]').value.to.equal('ログイン')
+
+    browser
+      .setValue('#email', 'test@sample.xxx')
+      .setValue('#password', 'password')
+      .click('input[type="submit"]')
+      .pause(1000)
+      .expect.element('input[type="submit"]').value.to.equal('ログアウト')
+
+    browser
+      .click('input[type="submit"]')
+      .pause(1000)
+      .expect.element('input[type="submit"]').value.to.equal('ログイン')
 
     browser
       .end()

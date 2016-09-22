@@ -22,7 +22,7 @@ passport.use(new LocalStrategy(
       email: username
     }, function (err, user) {
       if (err) return cb(err, null)   // Error Code 500
-      if (!user) return cb(null, false, {message: 'Missing email.'})   // req.flash('error')[0]
+      if (!user || user.length == 0) return cb(null, false, {message: 'Missing email.'})   // req.flash('error')[0]
 
       // 作成したパスワードのハッシュ値の計算方法は不明
       //   ex. require('password-hash').generate('password')
@@ -64,9 +64,23 @@ app.use(passport.session())
 const prefix = '/server-program'
 
 router.get('/login', function (req, res) {
-  console.log(req.flash('error')[0])
-  return res.render('login.ejs', {
+  console.log('error:', req.flash('error')[0])
+  var resBody = {
     authorized: req.isAuthenticated()  // 認証済みかどうかの確認
+  }
+
+  res.format({
+    'text/html': function () {
+      res.render('login.ejs', resBody)
+    },
+
+    'application/json': function () {
+      res.send(resBody)
+    },
+
+    'default': function () {
+      res.status(406).send('Not Acceptable');
+    }
   })
 })
 
