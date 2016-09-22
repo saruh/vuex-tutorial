@@ -5,11 +5,7 @@
 <template>
   <div>
     <ul class="mdl-list chat-timeline">
-      <div v-for="msg in list" >
-        <h3>
-          {{ msg }}
-        </h3>
-      </div>
+      <li v-for="msg in list" >{{ msg }}</li>
     </ul>
     <form action=# @submit.stop.prevent='sendText'>
       <div class="mdl-textfield mdl-js-textfield">

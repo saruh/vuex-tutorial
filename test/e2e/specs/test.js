@@ -167,5 +167,28 @@ module.exports = {
 
     browser
       .end()
+  },
+
+  '/chat': function (browser) {
+    browser
+    .url('http://localhost:8080/chat')
+      .assert.elementCount('input', 2)
+      .assert.elementPresent('#chat-text1')
+      .assert.elementPresent('input[type=button]')
+      .expect.element('body > div.mdl-layout__container > div > main > div > div > ul > li').to.not.be.present
+
+    browser
+      .setValue('#chat-text1', 'comment1')
+      .click('input[type="button"]')
+      .setValue('#chat-text1', 'comment2')
+      .click('input[type="button"]')
+      .setValue('#chat-text1', 'comment3')
+      .click('input[type="button"]')
+      .pause(1000)
+      .assert.elementCount('body > div.mdl-layout__container > div > main > div > div > ul > li', 3)
+      .expect.element('body > div.mdl-layout__container > div > main > div > div > ul > li:nth-child(2)').text.to.equal('comment2')
+
+    browser
+      .end()
   }
 }
