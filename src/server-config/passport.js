@@ -58,6 +58,9 @@ passport.deserializeUser(function (user, cb) {
 app.use(passport.initialize())
 app.use(passport.session())
 
+// ルータの設定を外出しする時のための設定
+// module.exports = passport
+
 //
 // ここから先はルータの設定
 //
@@ -100,5 +103,3 @@ router.post('/logout', function (req, res) {
 })
 
 app.use(prefix, router)
-
-module.exports = passport
