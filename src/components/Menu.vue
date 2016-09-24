@@ -35,6 +35,7 @@ export default {
           {id: 'search', name: 'Search', path: '/search'},
           {id: 'dialog', name: 'Dialog', path: '/dialog'},
           {id: 'login', name: 'Login', path: '/login'},
+          {id: 'upload', name: 'Upload', path: '/upload'},
           {id: 'chat', name: 'Chat', path: '/chat'}
       ]
     }

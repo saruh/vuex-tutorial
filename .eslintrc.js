@@ -21,5 +21,13 @@ module.exports = {
 
     // Stylistic Issues
     'operator-linebreak': ["error", "before"]
+  },
+  'globals': {
+    // 'localStorage': true,
+    // '$chat': true,
+    // 'alert': true, //一時的に後で外す
+    'FormData': true //,
+    // 'Audio': true,
+    // 'componentHandler': true  /* Material Design Lite */
   }
 }

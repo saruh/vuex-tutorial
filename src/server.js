@@ -24,6 +24,7 @@ app.use(session({ secret: 'hoge', resave: false, saveUninitialized: false }))
 
 require('./database').connect()
 require('../src/server-config/passport')
+require('../src/server-config/fileupload')
 
 var compiler = webpack(webpackConfig)
 

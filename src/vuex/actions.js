@@ -43,3 +43,15 @@ export const logout = ({dispatch}, el) => {
     console.log('catch', e)
   })
 }
+
+export const upload = ({dispatch}, formData) => {
+  api.upload(formData)
+  .then((response) => {
+    dispatch('UPLOAD', response.data.file_path)
+  }, (err) => {
+    console.log('err', err)
+  })
+  .catch((e) => {
+    console.log('catch', e)
+  })
+}

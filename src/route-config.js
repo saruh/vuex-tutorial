@@ -3,6 +3,7 @@ import CountEx from './components/CountEx'
 import Search from './components/Search'
 import Dialog from './components/Dialog'
 import Login from './components/Login'
+import Upload from './components/Upload'
 import Chat from './components/Chat'
 
 export function configRouter (router) {
@@ -26,6 +27,10 @@ export function configRouter (router) {
     '/login': {
       component: Login,
       title: 'Login'
+    },
+    '/upload': {
+      component: Upload,
+      title: 'Upload'
     },
     '/chat': {
       component: Chat,

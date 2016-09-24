@@ -23,3 +23,4 @@ Vue.http.interceptors.push((request, next) => {
 export const AddressResource = Vue.resource('https://maps.googleapis.com/maps/api/geocode/json')
 export const LoginResource = Vue.resource('/server-program/login')
 export const LogoutResource = Vue.resource('/server-program/logout')
+export const UploadResource = Vue.resource('/upload')

@@ -68,6 +68,9 @@ module.exports = {
       .click('#menu-login')
         .assert.urlContains('/login')
         .assert.title('Login')
+      .click('#menu-upload')
+        .assert.urlContains('/upload')
+        .assert.title('Upload')
       .click('#menu-chat')
         .assert.urlContains('/chat')
         .assert.title('Chat')
@@ -89,6 +92,9 @@ module.exports = {
       .click('#s-menu-login')
         .assert.urlContains('/login')
         .assert.title('Login')
+      .click('#s-menu-upload')
+        .assert.urlContains('/upload')
+        .assert.title('Upload')
       .click('#s-menu-chat')
         .assert.urlContains('/chat')
         .assert.title('Chat')
@@ -164,6 +170,21 @@ module.exports = {
       .click('input[type="submit"]')
       .pause(1000)
       .expect.element('input[type="submit"]').value.to.equal('ログイン')
+
+    browser
+      .end()
+  },
+
+  '/upload': function (browser) {
+    browser
+    .url('http://localhost:8080/upload')
+      .assert.elementCount('input', 1)
+      .expect.element('input[type=file]').to.be.present
+
+    browser
+      .setValue('input[type=file]', require('path').resolve(__dirname + '/../../../src/assets/logo.png'))
+      .pause(1000)
+      .expect.element('#file_path').to.be.present
 
     browser
       .end()

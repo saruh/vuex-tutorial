@@ -1,7 +1,8 @@
 import {
   AddressResource,
   LoginResource,
-  LogoutResource
+  LogoutResource,
+  UploadResource
 } from './resources'
 
 export default {
@@ -13,5 +14,8 @@ export default {
   },
   logout (data) {
     return LogoutResource.save({}, data)
+  },
+  upload (formData) {
+    return UploadResource.save({}, formData)
   }
 }

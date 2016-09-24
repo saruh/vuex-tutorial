@@ -11,6 +11,7 @@ const state = {
   count: 0,
   message: '',
   login_status: false,
+  file_path: '',
   chat_msgs: []
 }
 
@@ -31,6 +32,9 @@ export const mutations = {
   },
   LOGIN (state, status) {
     state.login_status = status
+  },
+  UPLOAD (state, path) {
+    state.file_path = path
   },
   CHAT_POST (state, msg) {
     state.chat_msgs.push(msg)
