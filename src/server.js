@@ -20,7 +20,14 @@ var app = module.exports = express()
 app.set('view engine', 'ejs')  // templateエンジン
 app.use(flash())  // passportの失敗時の原因を取得するのに利用
 app.use(require('body-parser').urlencoded({ extended: true }))  // postパラメータの受付
-app.use(session({ secret: 'hoge', resave: false, saveUninitialized: false }))
+// app.use(session({ secret: 'hoge', resave: false, saveUninitialized: false }))
+var RedisStore = require('connect-redis')(session)
+app.use(session({
+  secret: 'hoge',
+  resave: false,
+  saveUninitialized: false,
+  store: new RedisStore({host:'localhost',port:6379})
+}))
 
 require('./database').connect()
 require('../src/server-config/passport')
