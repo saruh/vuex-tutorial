@@ -4,6 +4,9 @@
   "description": "A Vue.js project",
   "author": "saruh",
   "private": true,
+  "engines": {
+    "node": "6"
+  },
   "scripts": {
     "dev": "node src/server.js",
     "build": "node build/build.js",
